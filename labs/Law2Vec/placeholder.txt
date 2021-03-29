@@ -1,0 +1,4 @@
+Placeholder folder for Law2Vec files:
+
+Law2Vec.100d.txt
+Law2Vec.200d.txt

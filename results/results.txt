@@ -1,0 +1,19 @@
+TF-IDF vector dimensions:
+
+- lematized - full doc - 90k
+- stemmed - title header recitals - 28k
+- stemmed - title header - 7k
+- stemmed - recitals  - 23k
+
+
+Overall results:
+
+			word2vec-apr1-tfidf	word2vec-apr2-tfidf	ml-knn-3	tf-idf-short	tf-idf-all-concepts	tf-idf-concepts-in-50-docs
+micro-precission	0.54			0.60			0.74		0.73		0.73			0.73
+micro-recall		0.61			0.57			0.59		0.62		0.58			0.66
+micro-f1		0.57			0.59			0.66		0.67		0.65			0.69
+macro-precission	0.46			0.47			0.55		0.57		0.25			0.69
+macro-recall		0.44			0.40			0.42		0.44		0.19			0.56
+macro-f1		0.40			0.40			0.45		0.47		0.20			0.60
+
+

@@ -1,0 +1,15 @@
+Placeholder folder for eurlex data
+
+Full structure:
+
+Json documents (raw and filtered ones) in folders:
+
+train\				-- raw docs
+train_filtered\			-- filtering done on raw docs after selecting concepts that appear in more than 10 docs
+train_filtered_50\		-- filtering done on raw docs after selecting concepts that appear in more than 50 docs
+
+Documents (raw and filtered ones) in csv format
+
+dataset.csv			-- raw docs
+dataset_filtered.csv		-- filtering done on raw docs after selecting concepts that appear in more than 10 docs
+dataset_filtered_50.csv		-- filtering done on raw docs after selecting concepts that appear in more than 50 docs
