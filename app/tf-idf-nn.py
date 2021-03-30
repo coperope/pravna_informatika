@@ -157,8 +157,10 @@ def main(argv):
             one_hot_results.append(res)
         print("-"*80)
         print(" Predicted concepts: ")
-        print(onehot_encoder.inverse_transform(one_hot_results))
+        print(numpy.ravel(onehot_encoder.inverse_transform(one_hot_results)))
         print("-"*80)
+        print(" Real concepts:")
+        print(concepts)
 
 if __name__ == "__main__":
    main(sys.argv[1:])
