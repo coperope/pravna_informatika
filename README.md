@@ -1,8 +1,8 @@
 # PI
 
 ### Authors
-Mihajlo Perendija @mihajlo-perendija
-Petar Bašić @coperope
+- Mihajlo Perendija @mihajlo-perendija
+- Petar Bašić @coperope
 
 ## Getting started
 ### Prerequisites
