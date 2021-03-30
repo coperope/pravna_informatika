@@ -8,8 +8,9 @@
 ### Prerequisites
 Ensure you have installed/downloaded the following before proceeding further:
 
-- Python 3.7 
-- Installed other requirements
+- Python 3.7.10 
+- Installed all the libraries from `requirements.txt`
+- Jupyter lab or similar 
 ### Original data
 Original dataset for this project can be found at http://nlp.cs.aueb.gr/software_and_datasets/EURLEX57K/index.html
 
