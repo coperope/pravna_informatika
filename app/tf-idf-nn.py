@@ -137,20 +137,28 @@ def main(argv):
         main_body = '\n'.join(data["main_body"])
         attachments = data["attachments"]
         combined = "\n".join([title, header, recitals])
-        preprocessed = preprocess_sentence(combined)
-
+        preprocessed = [' '.join(preprocess_sentence(combined))]
 
         tfidf_vectorizer= load_obj('helpers/tfidf_vectorizer')
         tfidf_vectorizer_vectors=tfidf_vectorizer.transform(preprocessed)
 
         X_test = tfidf_vectorizer_vectors
-
         model = keras.models.load_model("nn_model.h5", compile=False)
         model.compile(loss=weighted_binary_crossentropy, optimizer="adam", metrics=[metrics.top_k_categorical_accuracy])
 
-        y_pred = model.predict(X_test.todense(), batch_size=64, verbose=1)
-        y_pred = (y_pred > 0.5)
-        print(onehot_encoder.inverse_transform(y_pred))
+        y_pred = model.predict(X_test.todense().reshape(1, -1))
+
+        result_indexes = numpy.where(y_pred > 0.5)[1]
+        dim = y_pred.shape[1]
+        one_hot_results = []
+        for ind in result_indexes:
+            res = numpy.zeros(dim) 
+            res[ind] = 1
+            one_hot_results.append(res)
+        print("-"*80)
+        print(" Predicted concepts: ")
+        print(onehot_encoder.inverse_transform(one_hot_results))
+        print("-"*80)
 
 if __name__ == "__main__":
    main(sys.argv[1:])
